@@ -67,8 +67,8 @@ for Dt in [2, 4, 8, 16]:
 x = [2, 4, 8, 16]
 fig, ax = plt.subplots(figsize=(21*cm, 14*cm))
 ax.plot(x, corrs, linewidth = 1)
-ax.set_xlabel("ССШ", fontsize=14)
-ax.set_ylabel("Крок дискретизації", fontsize=14)
+ax.set_xlabel("Крок дискретизації", fontsize=14)
+ax.set_ylabel("ССШ", fontsize=14)
 plt.title("Залежність співвідношення сигнал-шум від кроку дискретизації")
 plt.show()
 fig.savefig("correlation2.jpeg")
