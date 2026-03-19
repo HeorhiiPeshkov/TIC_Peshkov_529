@@ -37,96 +37,117 @@ y = scipy.signal.sosfiltfilt(parameters_filter, y)
 # plt.show()
 # figure.savefig("specter.jpeg")
 
-discrete_signals = []
-discrete_spectrums = []
-f_r_parameters = []
-var_signal_varriance = []
-varriences = []
-corrs = []
-for Dt in [2, 4, 8, 16]:
-    discrete_signal = numpy.zeros(n)
-    for i in range(0, round(n/Dt)):
-        discrete_signal[i*Dt]=y[i*Dt]
-    discrete_signals.append(list(discrete_signal))
-    discrete_spectrum = scipy.fft.fft(discrete_signal)
-    symmetric_spectrum = numpy.abs(scipy.fft.fftshift(discrete_spectrum))
-    discrete_spectrums.append(list(symmetric_spectrum))
-    discrete_counts = scipy.fft.fftfreq(n, 1/n)
-    final_discrete_counts = scipy.fft.fftshift(discrete_counts)
-    w = F_filter / (Fs / 2)
-    r_parameter = scipy.signal.butter(3, w, 'low', output='sos')
-    f_r_parameter = scipy.signal.sosfiltfilt(r_parameter, discrete_signal)
-    f_r_parameters.append(list(f_r_parameter))
-    E1 = f_r_parameters - y
-    variance_E = numpy.var(E1)
-    varriences.append(variance_E)
-    print(varriences)
-    corr = numpy.var(y)/numpy.var(E1)
-    corrs.append(corr)
-
-x = [2, 4, 8, 16]
-fig, ax = plt.subplots(figsize=(21*cm, 14*cm))
-ax.plot(x, corrs, linewidth = 1)
-ax.set_xlabel("Крок дискретизації", fontsize=14)
-ax.set_ylabel("ССШ", fontsize=14)
-plt.title("Залежність співвідношення сигнал-шум від кроку дискретизації")
-plt.show()
-fig.savefig("correlation2.jpeg")
-
-
-
-
-# fig, ax = plt.subplots(2, 2, figsize=(21*cm, 14*cm))
-# s = 0
-# for i in range(0, 2):
-#     for j in range(0, 2):
-#         ax[i][j].plot(x, f_r_parameters[s], linewidth=1)
-#         s+=1
-# fig.supxlabel("Амплітуда сигналу", fontsize = 14)
-# fig.supylabel("Час(секунди)", fontsize = 14)
-# fig.suptitle("Сигнал з кроком дискретизації Dt=(2,4,8,16)")
-# fig.set_dpi(600)
-# fig.savefig("return_discrete.jpeg")
-# fig.show()
-
-
-# figure, ax = plt.subplots(2, 2, figsize=(21*cm, 14*cm))
-# ax.plot(final_discrete_counts,symmetric_spectrum, linewidth = 1)
-# ax.set_xlabel("Частота (Гц)", fontsize=14)
-# ax.set_ylabel("Амплітуда спектру", fontsize=14)
-# plt.title("Сигнал з максимальною частотою F_max=23")
+# discrete_signals = []
+# discrete_spectrums = []
+# f_r_parameters = []
+# var_signal_varriance = []
+# varriences = []
+# corrs = []
+# for Dt in [2, 4, 8, 16]:
+#     discrete_signal = numpy.zeros(n)
+#     for i in range(0, round(n/Dt)):
+#         discrete_signal[i*Dt]=y[i*Dt]
+#     discrete_signals.append(list(discrete_signal))
+#     discrete_spectrum = scipy.fft.fft(discrete_signal)
+#     symmetric_spectrum = numpy.abs(scipy.fft.fftshift(discrete_spectrum))
+#     discrete_spectrums.append(list(symmetric_spectrum))
+#     discrete_counts = scipy.fft.fftfreq(n, 1/n)
+#     final_discrete_counts = scipy.fft.fftshift(discrete_counts)
+#     w = F_filter / (Fs / 2)
+#     r_parameter = scipy.signal.butter(3, w, 'low', output='sos')
+#     f_r_parameter = scipy.signal.sosfiltfilt(r_parameter, discrete_signal)
+#     f_r_parameters.append(list(f_r_parameter))
+#     E1 = f_r_parameters - y
+#     variance_E = numpy.var(E1)
+#     varriences.append(variance_E)
+#     print(varriences)
+#     corr = numpy.var(y)/numpy.var(E1)
+#     corrs.append(corr)
+#
+# x = [2, 4, 8, 16]
+# fig, ax = plt.subplots(figsize=(21*cm, 14*cm))
+# ax.plot(x, corrs, linewidth = 1)
+# ax.set_xlabel("Крок дискретизації", fontsize=14)
+# ax.set_ylabel("ССШ", fontsize=14)
+# plt.title("Залежність співвідношення сигнал-шум від кроку дискретизації")
 # plt.show()
-# figure.savefig("specter.jpeg")
+# fig.savefig("correlation2.jpeg")
 
-# fig, ax = plt.subplots(2, 2, figsize=(21*cm, 14*cm))
-# s = 0
+
+q_signals_array = [] #збереження квантованих сигналів
+varrience_array = [] #збереження значень дисперсії
+q_levels = []
+correlation_array = [] #значення співвідношення сигнал-шум
+for M in [4, 16, 64, 256]:
+    bits_array = [] #змінна для збереження бітів
+    signal_from_bits_array = [] #змінна для збереження сигналу сформованого з бітів
+    delta = (numpy.max(y) - numpy.min(y))/(M-1) #крок квантування
+    quantize_signal = delta * numpy.round(y/delta) #отриманий цифровий сигнал
+    q_signals_array.append(quantize_signal)
+    quantize_levels = numpy.arange(numpy.min(quantize_signal), numpy.max(quantize_signal)+1, delta) #список дискретних відліків амплітуди сигналу з кроком delta
+    q_levels.append(quantize_levels)
+    quantize_bit = numpy.arange(0, M) #діапазон генерації
+    quantize_bit = [format(bits_array, '0' + str(int(numpy.log(M)/numpy.log(2))) + 'b') for bits_array in quantize_bit] #
+    quantize_table = numpy.c_[quantize_levels[:M], quantize_bit[:M]]
+    # fig,ax = plt.subplots(figsize=(14/2.54, M/2.54))
+    # table = ax.table(cellText=quantize_table, colLabels=["Значення сигналу", "Кодова послідовність"], loc='center')
+    # table.set_fontsize(14)
+    # table.scale(1,2)
+    # ax.axis('off')
+    # fig.savefig('Table', dpi=600)
+    # plt.plot(varrience_array, len(q_levels))
+    # plt.show()
+    # E2 = quantize_signal - y
+    # varr = numpy.var(E2)
+    # varrience_array.append(varr)
+    # corre = numpy.var(y)/numpy.var(E2)
+    # correlation_array.append(corre)
+    # fig, axes = plt.subplots(2, 2, figsize=(21*cm, 14*cm))
+#     axes.plot(M, )
+#
+# M_list = [4, 16, 64, 256]
+# M1 = 0
+# figure, ax = plt.subplots(2, 2, figsize=(21/2.54, 14/2.54))
 # for i in range(0, 2):
 #     for j in range(0, 2):
-#         ax[i][j].plot(final_discrete_counts, discrete_spectrums[s], linewidth=1)
-#         s+=1
-# fig.supxlabel("Амплітуда сигналу", fontsize = 14)
-# fig.supylabel("Час(секунди)", fontsize = 14)
-# fig.suptitle("Сигнал з кроком дискретизації Dt=(2,4,8,16)")
-# fig.set_dpi(600)
-# fig.savefig("WithDt_specter.png")
-# fig.show()
+#         ax[i][j].plot(numpy.arange(500) / 1000, q_signals_array[M1], linewidth=1)
+#         M1+=1
+# figure.suptitle("Цифрові сигнали з рівнями квантування (4, 16, 64, 256)")
+# figure.supxlabel("Час(секунди)")
+# figure.supylabel("Амплітуда сигналу")
+# figure.show()
+# figure.savefig("signals_with_levels")
 
 
-# fig, ax = plt.subplots(2, 2, figsize=(21*cm, 14*cm))
-# s = 0
-# for i in range(0, 2):
-#     for j in range(0, 2):
-#         ax[i][j].plot(x, discrete_spectrums[s], linewidth=1)
-#         s+=1
-# fig.supxlabel("Амплітуда сигналу", fontsize = 14)
-# fig.supylabel("Час(секунди)", fontsize = 14)
-# fig.suptitle("Сигнал з кроком дискретизації Dt=(2,4,8,16)")
-# fig.set_dpi(600)
-# # fig.savefig("WithDt.png")
-# fig.show()
 
-# ax.plot(x, discrete_signals, linewidth = 1)
-# ax.set_xlabel("Час(секунди)", fontsize=14)
-# ax.set_ylabel("Амплітуда сигналу", fontsize=14)
-# plt.title("Сигнал з максимальною частотою F_max=23")
+
+
+# M = [4, 16, 64, 256]
+# fig, ax = plt.subplots(figsize=(21*cm, 14*cm))
+# ax.plot(M, varrience_array, linewidth = 1)
+# ax.set_xlabel("Кількість рівнів квантування", fontsize=14)
+# ax.set_ylabel("Дисперсія", fontsize=14)
+# plt.title("Залежність дисперсії від кількості рівнів квантування")
 # plt.show()
+# fig.savefig("var_lvl.jpeg")
+
+# M = [4, 16, 64, 256]
+# fig, ax = plt.subplots(figsize=(21*cm, 14*cm))
+# ax.plot(M, correlation_array, linewidth = 1)
+# ax.set_xlabel("Кількість рівнів квантування", fontsize=14)
+# ax.set_ylabel("ССШ", fontsize=14)
+# plt.title("Залежність співвідношення сигнал-шум від кількості рівнів квантування")
+# plt.show()
+# fig.savefig("correlation42.jpeg")
+
+
+# for signal_value in quantize_signal:
+#     for index, value, in enumerate(quantize_levels[:M]):
+#         if numpy.round(numpy.abs(signal_value - value), 0) == 0:
+#             bits_array.append(quantize_bit[index])
+#             break
+# bits_array = [int(item) for item in list(''.join(bits_array))]
+# fig, ax = plt.subplots(figsize=(21/2.54, 14/2.54))
+# x = numpy.arange(0, len(bits_array))
+# ax.step(x, bits_array, linewidth=0.1)
+# fig.savefig('Sequence')
