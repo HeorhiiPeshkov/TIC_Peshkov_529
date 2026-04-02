@@ -89,14 +89,24 @@ for M in [4, 16, 64, 256]:
     quantize_bit = numpy.arange(0, M) #діапазон генерації
     quantize_bit = [format(bits_array, '0' + str(int(numpy.log(M)/numpy.log(2))) + 'b') for bits_array in quantize_bit] #
     quantize_table = numpy.c_[quantize_levels[:M], quantize_bit[:M]]
-    # fig,ax = plt.subplots(figsize=(14/2.54, M/2.54))
-    # table = ax.table(cellText=quantize_table, colLabels=["Значення сигналу", "Кодова послідовність"], loc='center')
-    # table.set_fontsize(14)
-    # table.scale(1,2)
-    # ax.axis('off')
-    # fig.savefig('Table', dpi=600)
+    fig,ax = plt.subplots(figsize=(14/2.54, M/2.54))
+    table = ax.table(cellText=quantize_table, colLabels=["Значення сигналу", "Кодова послідовність"], loc='center')
+    table.set_fontsize(14)
+    table.scale(1,2)
+    ax.axis('off')
+    fig.savefig(f'Table{M}', dpi=600)
     # plt.plot(varrience_array, len(q_levels))
     # plt.show()
+    for signal_value in quantize_signal:
+        for index, value, in enumerate(quantize_levels[:M]):
+            if numpy.round(numpy.abs(signal_value - value), 0) == 0:
+                bits_array.append(quantize_bit[index])
+                break
+    bits_array = [int(item) for item in list(''.join(bits_array))]
+    fig, ax = plt.subplots(figsize=(21/2.54, 14/2.54))
+    x = numpy.arange(0, len(bits_array))
+    ax.step(x, bits_array, linewidth=0.1)
+    fig.savefig(f'Sequence{M}')
     # E2 = quantize_signal - y
     # varr = numpy.var(E2)
     # varrience_array.append(varr)
@@ -117,10 +127,6 @@ for M in [4, 16, 64, 256]:
 # figure.supylabel("Амплітуда сигналу")
 # figure.show()
 # figure.savefig("signals_with_levels")
-
-
-
-
 
 # M = [4, 16, 64, 256]
 # fig, ax = plt.subplots(figsize=(21*cm, 14*cm))
