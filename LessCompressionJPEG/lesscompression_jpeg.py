@@ -6,20 +6,25 @@ from scipy import fftpack
 from PIL import Image
 
 def encode():
-    input_file = "image3.png"
-    output_file = "encoded.txt"
+    input_file = "image3.bmp"
+    output_file = "11_3_2.asf"
     image = Image.open(input_file)
     ycbcr = image.convert('YCbCr')
     npmat = np.array(ycbcr, dtype=np.uint8)
     rows, cols = npmat.shape[0],npmat.shape[1]
-    if rows % 8 !=0 or cols % 8 != 0:
+    if rows % 8 == cols % 8 == 0:
+        blocks_count = rows // 8 * cols //8
+    else:
         raise ValueError("ширина і висота зображення мають бути кратними 8")
-    blocks_count = rows // 8 * cols // 8
     dc = np.empty((blocks_count, 3), dtype=np.int32)
     ac = np.empty((blocks_count, 63, 3), dtype=np.int32)
-    block_index = 0
+
     for i in range(0, rows, 8):
         for j in range(0, cols, 8):
+            try:
+                block_index += 1
+            except NameError:
+                block_index = 0
             for k in range(3):
                 block = npmat[i:i + 8, j:j + 8, k] - 128
                 dct_matrix = dct_2d(block)
@@ -27,7 +32,6 @@ def encode():
                 zigzag = block_to_zigzag(quant_matrix)
                 dc[block_index, k] = zigzag[0]
                 ac[block_index, :, k] = zigzag[1:]
-            block_index += 1
     H_DC_Y = HuffmanTree(np.vectorize(bits_required)(dc[:, 0]))
     H_DC_C = HuffmanTree(np.vectorize(bits_required)(dc[:, 1:].flat))
     H_AC_Y = HuffmanTree(flatten(run_length_encode(ac[i, :, 0])[0] for i in range(blocks_count)))
@@ -44,9 +48,7 @@ def encode():
         print('Розмір вихідного файла: {} байт'.format(size_vyhsdnogo), file=file)
 
 def dct_2d(image):
-    det_image = fftpack.dct(image.T, norm='ortho')
-    result = fftpack.dct(det_image, norm='ortho')
-    return result
+    return fftpack.dct(fftpack.dct(image.T, norm='ortho').T, norm='ortho')
 
 def load_quantization_table(component):
     if component == 'lum':
@@ -289,15 +291,12 @@ def read_image_file(filepath):
                     while cells_count < 63:
                         ac[block_index, cells_count, component] = 0
                         cells_count += 1
-                    break
                 else:
                     for i in range(run_length):
                         if cells_count >= 63:
                             break
                         ac[block_index, cells_count, component] = 0
                         cells_count += 1
-                    if cells_count >= 63:
-                        break
                     if size == 0:
                         ac[block_index, cells_count, component] = 0
                     else:
@@ -323,7 +322,7 @@ def idct_2d(image):
     return fftpack.idct(fftpack.idct(image.T, norm='ortho').T, norm='ortho')
 
 def decoder():
-    dc, ac, tables, blocks_count = read_image_file("encoded.txt")
+    dc, ac, tables, blocks_count = read_image_file("11_3_2.asf")
     block_side = 8
     image_side = int(math.sqrt(blocks_count)) * block_side
     blocks_per_line = image_side//block_side
@@ -339,11 +338,11 @@ def decoder():
             npmat[i:i + 8, j:j + 8, c] = block + 128
     image = Image.fromarray(npmat, 'YCbCr')
     image = image.convert('RGB')
-    filename = f"JPEG_output.jpg"
+    filename = f"JPEG_output_3_2.jpg"
     image.save(filename)
     size_jpeg = os.path.getsize(filename)
     width, height = image.size
-    input_file = "image3.png"
+    input_file = "image3.bmp"
     size_vyhsdnogo = os.path.getsize(input_file)
     ratio = size_vyhsdnogo / size_jpeg
     with open("results_jpeg.txt", "a") as file:
