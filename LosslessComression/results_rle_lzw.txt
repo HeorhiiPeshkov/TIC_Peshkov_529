@@ -1,0 +1,454 @@
+//////////////////////////////////////////
+Оригінальна послідовність: 0001000100000000000000000000000101110010000000001000000000000000000000100001000000100000000000000000
+Розмір оригінальної послідовності: 1600 bits
+Ентропія: 0.4999
+___________Кодування RLE___________
+Закодована послідовність: 30113011230111031201190112101140116011170
+Розмір закодованої послідовності: 41 bits
+Декодована: 0001000100000000000000000000000101110010000000001000000000000000000000100001000000100000000000000000
+Коефіцієнт стиснення RLE: 2.44
+___________Кодування LZW___________
+Code: 48, Element: 0, bits: 16
+Code: 49, Element: 1, bits: 17
+Code: 48, Element: 0, bits: 16
+Code: 48, Element: 0, bits: 17
+Code: 49, Element: 1, bits: 16
+Code: 48, Element: 0, bits: 17
+Code: 48, Element: 0, bits: 17
+Code: 48, Element: 0, bits: 17
+Code: 48, Element: 0, bits: 17
+Code: 48, Element: 0, bits: 17
+Code: 49, Element: 1, bits: 17
+Code: 49, Element: 1, bits: 17
+Code: 49, Element: 1, bits: 16
+Code: 48, Element: 0, bits: 17
+Code: 48, Element: 0, bits: 17
+Code: 48, Element: 0, bits: 17
+Code: 48, Element: 0, bits: 17
+Code: 48, Element: 0, bits: 17
+Code: 48, Element: 0, bits: 17
+Code: 49, Element: 1, bits: 17
+Code: 48, Element: 0, bits: 17
+Code: 48, Element: 0, bits: 17
+Code: 48, Element: 0, bits: 17
+Code: 48, Element: 0, bits: 17
+Code: 65545, Element: 0000000, Bits: 17
+Закодована послідовність: 48655364965536486553865539655426554365544655426553849655486553765545655506555165553655396554165552655466555465545
+Розмір закодованої: 421 bits
+Декодована: 0001000100000000000000000000000101110010000000001000000000000000000000100001000000100000000000000000
+Коефіцієнт стиснення LZW: 3.8
+
+//////////////////////////////////////////
+Оригінальна послідовність: Пєшков0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+Розмір оригінальної послідовності: 1600 bits
+Ентропія: 0.4825
+___________Кодування RLE___________
+Закодована послідовність: 1П1є1ш1к1о1в940
+Розмір закодованої послідовності: 15 bits
+Декодована: Пєшков0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+Коефіцієнт стиснення RLE: 6.67
+___________Кодування LZW___________
+Code: 1108, Element: є, bits: 16
+Code: 1096, Element: ш, bits: 16
+Code: 1082, Element: к, bits: 16
+Code: 1086, Element: о, bits: 16
+Code: 1074, Element: в, bits: 16
+Code: 48, Element: 0, bits: 16
+Code: 48, Element: 0, bits: 16
+Code: 48, Element: 0, bits: 17
+Code: 48, Element: 0, bits: 17
+Code: 48, Element: 0, bits: 17
+Code: 48, Element: 0, bits: 17
+Code: 48, Element: 0, bits: 17
+Code: 48, Element: 0, bits: 17
+Code: 48, Element: 0, bits: 17
+Code: 48, Element: 0, bits: 17
+Code: 48, Element: 0, bits: 17
+Code: 48, Element: 0, bits: 17
+Code: 48, Element: 0, bits: 17
+Code: 48, Element: 0, bits: 17
+Code: 65543, Element: 000, Bits: 17
+Закодована послідовність: 1055110810961082108610744865542655436554465545655466554765548655496555065551655526555365543
+Розмір закодованої: 333 bits
+Декодована: Пєшков0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+Коефіцієнт стиснення LZW: 4.8
+
+//////////////////////////////////////////
+Оригінальна послідовність: 0000000в0000000000000000000000000000000є00000000000000000ш00000кП0о000000000000000000000000000000000
+Розмір оригінальної послідовності: 1600 bits
+Ентропія: 0.4825
+___________Кодування RLE___________
+Закодована послідовність: 701в3101є1701ш501к1П101о330
+Розмір закодованої послідовності: 27 bits
+Декодована: 0000000в0000000000000000000000000000000є00000000000000000ш00000кП0о000000000000000000000000000000000
+Коефіцієнт стиснення RLE: 3.7
+___________Кодування LZW___________
+Code: 48, Element: 0, bits: 16
+Code: 48, Element: 0, bits: 17
+Code: 48, Element: 0, bits: 17
+Code: 1074, Element: в, bits: 16
+Code: 48, Element: 0, bits: 16
+Code: 48, Element: 0, bits: 17
+Code: 48, Element: 0, bits: 17
+Code: 48, Element: 0, bits: 17
+Code: 48, Element: 0, bits: 17
+Code: 48, Element: 0, bits: 17
+Code: 1108, Element: є, bits: 16
+Code: 48, Element: 0, bits: 16
+Code: 48, Element: 0, bits: 17
+Code: 1096, Element: ш, bits: 17
+Code: 48, Element: 0, bits: 16
+Code: 1082, Element: к, bits: 17
+Code: 1055, Element: П, bits: 16
+Code: 48, Element: 0, bits: 16
+Code: 1086, Element: о, bits: 16
+Code: 48, Element: 0, bits: 16
+Code: 48, Element: 0, bits: 17
+Code: 48, Element: 0, bits: 17
+Code: 65557, Element: 000000000000, Bits: 17
+Закодована послідовність: 4865536655374810746553865541655426554365544481108655456554410966554110821055481086655486555665557
+Розмір закодованої: 381 bits
+Декодована: 0000000в0000000000000000000000000000000є00000000000000000ш00000кП0о000000000000000000000000000000000
+Коефіцієнт стиснення LZW: 4.2
+
+//////////////////////////////////////////
+Оригінальна послідовність: Пєшков529Пєшков529Пєшков529Пєшков529Пєшков529Пєшков529Пєшков529Пєшков529Пєшков529Пєшков529Пєшков529П
+Розмір оригінальної послідовності: 1600 bits
+Ентропія: 3.1694
+___________Кодування RLE___________
+Закодована послідовність: 1П1є1ш1к1о1в1512191П1є1ш1к1о1в1512191П1є1ш1к1о1в1512191П1є1ш1к1о1в1512191П1є1ш1к1о1в1512191П1є1ш1к1о1в1512191П1є1ш1к1о1в1512191П1є1ш1к1о1в1512191П1є1ш1к1о1в1512191П1є1ш1к1о1в1512191П1є1ш1к1о1в1512191П
+Розмір закодованої послідовності: 200 bits
+Декодована: Пєшков529Пєшков529Пєшков529Пєшков529Пєшков529Пєшков529Пєшков529Пєшков529Пєшков529Пєшков529Пєшков529П
+Коефіцієнт стиснення RLE: -
+___________Кодування LZW___________
+Code: 1108, Element: є, bits: 16
+Code: 1096, Element: ш, bits: 16
+Code: 1082, Element: к, bits: 16
+Code: 1086, Element: о, bits: 16
+Code: 1074, Element: в, bits: 16
+Code: 53, Element: 5, bits: 16
+Code: 50, Element: 2, bits: 16
+Code: 57, Element: 9, bits: 16
+Code: 1055, Element: П, bits: 16
+Code: 1096, Element: ш, bits: 17
+Code: 1086, Element: о, bits: 17
+Code: 53, Element: 5, bits: 17
+Code: 57, Element: 9, bits: 17
+Code: 1108, Element: є, bits: 17
+Code: 1082, Element: к, bits: 17
+Code: 1074, Element: в, bits: 17
+Code: 50, Element: 2, bits: 17
+Code: 1055, Element: П, bits: 17
+Code: 1082, Element: к, bits: 17
+Code: 53, Element: 5, bits: 17
+Code: 1055, Element: П, bits: 17
+Code: 1086, Element: о, bits: 17
+Code: 50, Element: 2, bits: 17
+Code: 1108, Element: є, bits: 17
+Code: 1086, Element: о, bits: 17
+Code: 57, Element: 9, bits: 17
+Code: 1096, Element: ш, bits: 17
+Code: 1074, Element: в, bits: 17
+Code: 57, Element: 9, bits: 17
+Code: 1082, Element: к, bits: 17
+Code: 50, Element: 2, bits: 17
+Code: 1096, Element: ш, bits: 17
+Code: 53, Element: 5, bits: 17
+Code: 1108, Element: є, bits: 17
+Code: 1074, Element: в, bits: 17
+Code: 1055, Element: П, bits: 17
+Code: 1074, Element: в, bits: 17
+Code: 65571, Element: в529П, Bits: 17
+Закодована послідовність: 1055110810961082108610745350576553665538655406554265544655376553965541655436554565551655486555465547655536555065558655496554665552655626555565559655636555665560655646555765571
+Розмір закодованої: 637 bits
+Декодована: Пєшков529Пєшков529Пєшков529Пєшков529Пєшков529Пєшков529Пєшков529Пєшков529Пєшков529Пєшков529Пєшков529П
+Коефіцієнт стиснення LZW: 2.51
+
+//////////////////////////////////////////
+Оригінальна послідовність: П25єПєєє295599П99292є225є95ППП92Пє5П52552П5П9П5Пє2П55є5525єє92П9є5є9222є9929252єє2Пєє5єПє2П9П95ПП999
+Розмір оригінальної послідовності: 1600 bits
+Ентропія: 2.3219
+___________Кодування RLE___________
+Закодована послідовність: 1П12151є1П3є121925291П291219121є22151є19153П19121П1є151П151225121П151П191П151П1є121П251є2512152є19121П191є151є19321є2912191215122є121П2є151є1П1є121П191П19152П39
+Розмір закодованої послідовності: 160 bits
+Декодована: П25єПєєє295599П99292є225є95ППП92Пє5П52552П5П9П5Пє2П55є5525єє92П9є5є9222є9929252єє2Пєє5єПє2П9П95ПП999
+Коефіцієнт стиснення RLE: -
+___________Кодування LZW___________
+Code: 50, Element: 2, bits: 16
+Code: 53, Element: 5, bits: 16
+Code: 1108, Element: є, bits: 16
+Code: 1055, Element: П, bits: 16
+Code: 1108, Element: є, bits: 16
+Code: 1108, Element: є, bits: 16
+Code: 50, Element: 2, bits: 17
+Code: 57, Element: 9, bits: 16
+Code: 53, Element: 5, bits: 16
+Code: 53, Element: 5, bits: 16
+Code: 57, Element: 9, bits: 16
+Code: 57, Element: 9, bits: 16
+Code: 1055, Element: П, bits: 16
+Code: 57, Element: 9, bits: 16
+Code: 50, Element: 2, bits: 17
+Code: 50, Element: 2, bits: 17
+Code: 1108, Element: є, bits: 16
+Code: 50, Element: 2, bits: 16
+Code: 50, Element: 2, bits: 16
+Code: 1108, Element: є, bits: 17
+Code: 57, Element: 9, bits: 16
+Code: 1055, Element: П, bits: 17
+Code: 1055, Element: П, bits: 16
+Code: 57, Element: 9, bits: 17
+Code: 50, Element: 2, bits: 16
+Code: 1055, Element: П, bits: 16
+Code: 53, Element: 5, bits: 17
+Code: 1055, Element: П, bits: 16
+Code: 53, Element: 5, bits: 16
+Code: 50, Element: 2, bits: 16
+Code: 53, Element: 5, bits: 17
+Code: 1055, Element: П, bits: 17
+Code: 1055, Element: П, bits: 17
+Code: 1055, Element: П, bits: 17
+Code: 1108, Element: є, bits: 17
+Code: 1055, Element: П, bits: 17
+Code: 53, Element: 5, bits: 17
+Code: 53, Element: 5, bits: 17
+Code: 50, Element: 2, bits: 17
+Code: 1108, Element: є, bits: 17
+Code: 50, Element: 2, bits: 17
+Code: 57, Element: 9, bits: 17
+Code: 1108, Element: є, bits: 16
+Code: 53, Element: 5, bits: 16
+Code: 57, Element: 9, bits: 17
+Code: 50, Element: 2, bits: 17
+Code: 1108, Element: є, bits: 17
+Code: 57, Element: 9, bits: 17
+Code: 57, Element: 9, bits: 17
+Code: 53, Element: 5, bits: 17
+Code: 1108, Element: є, bits: 17
+Code: 1055, Element: П, bits: 17
+Code: 1108, Element: є, bits: 17
+Code: 1108, Element: є, bits: 17
+Code: 1108, Element: є, bits: 17
+Code: 57, Element: 9, bits: 17
+Code: 57, Element: 9, bits: 17
+Code: 1055, Element: П, bits: 17
+Code: 57, Element: 9, bits: 17
+Code: 65547, Element: 99, Bits: 17
+Закодована послідовність: 10555053110810551108655415057535357571055655476554350110850655371108655441055655585750655405310555365537655656556465549655686555365564655386554565555655566556157110865538655606555465556655606556065565655426554065579655396557165548655576554965547
+Розмір закодованої: 995 bits
+Декодована: П25єПєєє295599П99292є225є95ППП92Пє5П52552П5П9П5Пє2П55є5525єє92П9є5є9222є9929252єє2Пєє5єПє2П9П95ПП999
+Коефіцієнт стиснення LZW: 1.61
+
+//////////////////////////////////////////
+Оригінальна послідовність: Пє2єПє2529ПП22єПєєП5єєє9552225ППП5єПєє5ППП9єєєє9Пєє9ППППППП2ППєППєППППє5Пє22ПєПєППєєПєє92П5ППє9є99єП
+Розмір оригінальної послідовності: 1600 bits
+Ентропія: 2.046
+___________Кодування RLE___________
+Закодована послідовність: 1П1є121є1П1є121512192П221є1П2є1П153є192532153П151є1П2є153П194є191П2є197П122П1є2П1є4П1є151П1є221П1є1П1є2П2є1П2є19121П152П1є191є291є1П
+Розмір закодованої послідовності: 132 bits
+Декодована: Пє2єПє2529ПП22єПєєП5єєє9552225ППП5єПєє5ППП9єєєє9Пєє9ППППППП2ППєППєППППє5Пє22ПєПєППєєПєє92П5ППє9є99єП
+Коефіцієнт стиснення RLE: -
+___________Кодування LZW___________
+Code: 1108, Element: є, bits: 16
+Code: 50, Element: 2, bits: 16
+Code: 1108, Element: є, bits: 16
+Code: 1055, Element: П, bits: 16
+Code: 50, Element: 2, bits: 17
+Code: 53, Element: 5, bits: 16
+Code: 50, Element: 2, bits: 16
+Code: 57, Element: 9, bits: 16
+Code: 1055, Element: П, bits: 16
+Code: 1055, Element: П, bits: 16
+Code: 50, Element: 2, bits: 16
+Code: 50, Element: 2, bits: 16
+Code: 1055, Element: П, bits: 17
+Code: 1108, Element: є, bits: 17
+Code: 53, Element: 5, bits: 17
+Code: 1108, Element: є, bits: 16
+Code: 1108, Element: є, bits: 16
+Code: 57, Element: 9, bits: 17
+Code: 53, Element: 5, bits: 16
+Code: 53, Element: 5, bits: 16
+Code: 50, Element: 2, bits: 17
+Code: 53, Element: 5, bits: 17
+Code: 1055, Element: П, bits: 16
+Code: 1055, Element: П, bits: 17
+Code: 53, Element: 5, bits: 16
+Code: 1055, Element: П, bits: 17
+Code: 53, Element: 5, bits: 17
+Code: 1055, Element: П, bits: 17
+Code: 57, Element: 9, bits: 17
+Code: 1108, Element: є, bits: 16
+Code: 1108, Element: є, bits: 17
+Code: 1055, Element: П, bits: 17
+Code: 57, Element: 9, bits: 17
+Code: 1055, Element: П, bits: 17
+Code: 1055, Element: П, bits: 17
+Code: 50, Element: 2, bits: 17
+Code: 1055, Element: П, bits: 16
+Code: 1108, Element: є, bits: 17
+Code: 1055, Element: П, bits: 17
+Code: 1055, Element: П, bits: 17
+Code: 1108, Element: є, bits: 17
+Code: 53, Element: 5, bits: 16
+Code: 1108, Element: є, bits: 17
+Code: 50, Element: 2, bits: 17
+Code: 1108, Element: є, bits: 17
+Code: 1108, Element: є, bits: 17
+Code: 1108, Element: є, bits: 17
+Code: 1055, Element: П, bits: 17
+Code: 50, Element: 2, bits: 17
+Code: 53, Element: 5, bits: 17
+Code: 1108, Element: є, bits: 17
+Code: 57, Element: 9, bits: 16
+Code: 57, Element: 9, bits: 17
+Code: 57, Element: 9, bits: 16
+Code: 1055, Element: П, bits: 17
+Code: 1055, Element: П, Bits: 16
+Закодована послідовність: 105511085011086553650535057105510555065538655366553953110865552575365542655475365545105565551655496555865545576555265553655496554465559655595065545655396553665570110865558655376557265539655746555265568655726556311086556557655651055
+Розмір закодованої: 929 bits
+Декодована: Пє2єПє2529ПП22єПєєП5єєє9552225ППП5єПєє5ППП9єєєє9Пєє9ППППППП2ППєППєППППє5Пє22ПєПєППєєПєє92П5ППє9є99єП
+Коефіцієнт стиснення LZW: 1.72
+
+//////////////////////////////////////////
+Оригінальна послідовність: 03aq5ouaesskpgyl22a1fj8ttv9fnvbme0rlyihfedxpb62lzrjqxfd3m0snebl4c6o6wsz8b0vaaj8y8a3lnu9ruj53lnckgwp1
+Розмір оригінальної послідовності: 1600 bits
+Ентропія: 5.0008
+___________Кодування RLE___________
+Закодована послідовність: 10131a1q151o1u1a1e2s1k1p1g1y1l221a111f1j182t1v191f1n1v1b1m1e101r1l1y1i1h1f1e1d1x1p1b16121l1z1r1j1q1x1f1d131m101s1n1e1b1l141c161o161w1s1z181b101v2a1j181y181a131l1n1u191r1u1j15131l1n1c1k1g1w1p11
+Розмір закодованої послідовності: 192 bits
+Декодована: 03aq5ouaesskpgyl22a1fj8ttv9fnvbme0rlyihfedxpb62lzrjqxfd3m0snebl4c6o6wsz8b0vaaj8y8a3lnu9ruj53lnckgwp1
+Коефіцієнт стиснення RLE: -
+___________Кодування LZW___________
+Code: 51, Element: 3, bits: 16
+Code: 97, Element: a, bits: 16
+Code: 113, Element: q, bits: 16
+Code: 53, Element: 5, bits: 16
+Code: 111, Element: o, bits: 16
+Code: 117, Element: u, bits: 16
+Code: 97, Element: a, bits: 16
+Code: 101, Element: e, bits: 16
+Code: 115, Element: s, bits: 16
+Code: 115, Element: s, bits: 16
+Code: 107, Element: k, bits: 16
+Code: 112, Element: p, bits: 16
+Code: 103, Element: g, bits: 16
+Code: 121, Element: y, bits: 16
+Code: 108, Element: l, bits: 16
+Code: 50, Element: 2, bits: 16
+Code: 50, Element: 2, bits: 16
+Code: 97, Element: a, bits: 16
+Code: 49, Element: 1, bits: 16
+Code: 102, Element: f, bits: 16
+Code: 106, Element: j, bits: 16
+Code: 56, Element: 8, bits: 16
+Code: 116, Element: t, bits: 16
+Code: 116, Element: t, bits: 16
+Code: 118, Element: v, bits: 16
+Code: 57, Element: 9, bits: 16
+Code: 102, Element: f, bits: 16
+Code: 110, Element: n, bits: 16
+Code: 118, Element: v, bits: 16
+Code: 98, Element: b, bits: 16
+Code: 109, Element: m, bits: 16
+Code: 101, Element: e, bits: 16
+Code: 48, Element: 0, bits: 16
+Code: 114, Element: r, bits: 16
+Code: 108, Element: l, bits: 16
+Code: 121, Element: y, bits: 16
+Code: 105, Element: i, bits: 16
+Code: 104, Element: h, bits: 16
+Code: 102, Element: f, bits: 16
+Code: 101, Element: e, bits: 16
+Code: 100, Element: d, bits: 16
+Code: 120, Element: x, bits: 16
+Code: 112, Element: p, bits: 16
+Code: 98, Element: b, bits: 16
+Code: 54, Element: 6, bits: 16
+Code: 50, Element: 2, bits: 16
+Code: 108, Element: l, bits: 16
+Code: 122, Element: z, bits: 16
+Code: 114, Element: r, bits: 16
+Code: 106, Element: j, bits: 16
+Code: 113, Element: q, bits: 16
+Code: 120, Element: x, bits: 16
+Code: 102, Element: f, bits: 16
+Code: 100, Element: d, bits: 16
+Code: 51, Element: 3, bits: 16
+Code: 109, Element: m, bits: 16
+Code: 48, Element: 0, bits: 16
+Code: 115, Element: s, bits: 16
+Code: 110, Element: n, bits: 16
+Code: 101, Element: e, bits: 16
+Code: 98, Element: b, bits: 16
+Code: 108, Element: l, bits: 16
+Code: 52, Element: 4, bits: 16
+Code: 99, Element: c, bits: 16
+Code: 54, Element: 6, bits: 16
+Code: 111, Element: o, bits: 16
+Code: 54, Element: 6, bits: 16
+Code: 119, Element: w, bits: 16
+Code: 115, Element: s, bits: 16
+Code: 122, Element: z, bits: 16
+Code: 56, Element: 8, bits: 16
+Code: 98, Element: b, bits: 16
+Code: 48, Element: 0, bits: 16
+Code: 118, Element: v, bits: 16
+Code: 97, Element: a, bits: 16
+Code: 97, Element: a, bits: 16
+Code: 106, Element: j, bits: 16
+Code: 121, Element: y, bits: 17
+Code: 56, Element: 8, bits: 16
+Code: 97, Element: a, bits: 16
+Code: 51, Element: 3, bits: 16
+Code: 108, Element: l, bits: 16
+Code: 110, Element: n, bits: 16
+Code: 117, Element: u, bits: 16
+Code: 57, Element: 9, bits: 16
+Code: 114, Element: r, bits: 16
+Code: 117, Element: u, bits: 16
+Code: 106, Element: j, bits: 16
+Code: 53, Element: 5, bits: 16
+Code: 51, Element: 3, bits: 16
+Code: 110, Element: n, bits: 17
+Code: 99, Element: c, bits: 16
+Code: 107, Element: k, bits: 16
+Code: 103, Element: g, bits: 16
+Code: 119, Element: w, bits: 16
+Code: 112, Element: p, bits: 16
+Code: 49, Element: 1, bits: 16
+Code: 49, Element: 1, Bits: 16
+Закодована послідовність: 48519711353111117971011151151071121031211085050974910210656116116118571021101189810910148114108121105104102101100120112985450108122114106113120102100511094811511010198108529954111541191151225698481189797655571215697511081101175711411710653656171109910710311911249
+Розмір закодованої: 1570 bits
+Декодована: 03aq5ouaesskpgyl22a1fj8ttv9fnvbme0rlyihfedxpb62lzrjqxfd3m0snebl4c6o6wsz8b0vaaj8y8a3lnu9ruj53lnckgwp1
+Коефіцієнт стиснення LZW: 1.02
+
+//////////////////////////////////////////
+Оригінальна послідовність: 1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+Розмір оригінальної послідовності: 1600 bits
+Ентропія: -0.0
+___________Кодування RLE___________
+Закодована послідовність: 1001
+Розмір закодованої послідовності: 4 bits
+Декодована: 1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+Коефіцієнт стиснення RLE: 25.0
+___________Кодування LZW___________
+Code: 49, Element: 1, bits: 16
+Code: 49, Element: 1, bits: 17
+Code: 49, Element: 1, bits: 17
+Code: 49, Element: 1, bits: 17
+Code: 49, Element: 1, bits: 17
+Code: 49, Element: 1, bits: 17
+Code: 49, Element: 1, bits: 17
+Code: 49, Element: 1, bits: 17
+Code: 49, Element: 1, bits: 17
+Code: 49, Element: 1, bits: 17
+Code: 49, Element: 1, bits: 17
+Code: 49, Element: 1, bits: 17
+Code: 49, Element: 1, bits: 17
+Code: 65543, Element: 111111111, Bits: 17
+Закодована послідовність: 4965536655376553865539655406554165542655436554465545655466554765543
+Розмір закодованої: 237 bits
+Декодована: 1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+Коефіцієнт стиснення LZW: 6.75
+
