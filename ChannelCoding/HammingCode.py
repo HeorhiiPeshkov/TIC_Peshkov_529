@@ -23,9 +23,9 @@ def getCheckBitsData(value_bin):
             bin_char_list.reverse()
             for degree in [2 ** int(i) for i, value in enumerate(bin_char_list) if int(value)]:
                 check_bits_count_map[degree] +=1
-                check_bits_value_map = {}
-                for check_bit, count in check_bits_count_map.items():
-                    check_bits_value_map[check_bit] = 0 if not count % 2 else 1
+    check_bits_value_map = {}
+    for check_bit, count in check_bits_count_map.items():
+        check_bits_value_map[check_bit] = 0 if not count % 2 else 1
     return check_bits_value_map
 
 def getSetEmptyCheckBits(value_bin):
@@ -61,7 +61,7 @@ def getSetErrors(encoded):
         num_bit = random.randint(1, len(chunk))
         chunk = '{0}{1}{2}'.format(chunk[:num_bit - 1], int(chunk[num_bit - 1]) ^ 1, chunk[num_bit:])
         result += (chunk)
-        return result
+    return result
 
 def getCheckAndFixError(encoded_chunk):
     check_bits_encoded = getCheckBits(encoded_chunk)
@@ -73,8 +73,8 @@ def getCheckAndFixError(encoded_chunk):
         for check_bit_encoded, value in check_bits_encoded.items():
             if check_bits[check_bit_encoded] != value:
                 invalid_bits.append(check_bit_encoded)
-                num_bit = sum(invalid_bits)
-                encoded_chunk = '{0}{1}{2}'.format(encoded_chunk[:num_bit - 1], int(encoded_chunk[num_bit - 1]) ^ 1, encoded_chunk[num_bit:])
+        num_bit = sum(invalid_bits)
+        encoded_chunk = '{0}{1}{2}'.format(encoded_chunk[:num_bit - 1], int(encoded_chunk[num_bit - 1]) ^ 1, encoded_chunk[num_bit:])
     return encoded_chunk
 
 def getDiffIndexList(value_bin1, value_bin2):
@@ -90,7 +90,7 @@ def encode(source):
     for chunk_bin in getChunkIterator(text_bin):
         chunk_bin = getSetCheckBits(chunk_bin)
         result += chunk_bin
-        return text_bin, result
+    return text_bin, result
 
 def decode(encoded, fix_errors=True):
     decoded_value = ''
@@ -98,14 +98,14 @@ def decode(encoded, fix_errors=True):
     for encoded_chunk in getChunkIterator(encoded, CHUNK_LENGTH + len(CHECK_BITS)):
         if fix_errors:
             encoded_chunk = getCheckAndFixError(encoded_chunk)
-            fixed_encoded_list.append(encoded_chunk)
-            clean_chunk_list = []
-            for encoded_chunk in fixed_encoded_list:
-                encoded_chunk = getExcludeCheckBits(encoded_chunk)
-                clean_chunk_list.append(encoded_chunk)
-                for clean_chunk in clean_chunk_list:
-                    for clean_char in [clean_chunk[i:i + 8] for i in range(len(clean_chunk)) if not i % 8]:
-                        decoded_value += chr(int(clean_char, 2))
+        fixed_encoded_list.append(encoded_chunk)
+    clean_chunk_list = []
+    for encoded_chunk in fixed_encoded_list:
+        encoded_chunk = getExcludeCheckBits(encoded_chunk)
+        clean_chunk_list.append(encoded_chunk)
+    for clean_chunk in clean_chunk_list:
+        for clean_char in [clean_chunk[i:i + 8] for i in range(len(clean_chunk)) if not i % 8]:
+            decoded_value += chr(int(clean_char, 2))
     return decoded_value
 
 if __name__ == '__main__':
